@@ -1,5 +1,6 @@
 /* Reset some default styles for better consistency */
 body, h1, h2, h3, p, ul, li {
+    touch-action: manipulation;
     margin: 0;
     padding: 0;
 }
@@ -29,7 +30,8 @@ body {
 }
 
 /* Coin Button */
-#coinButton {
+#coinButton, .card button {
+     touch-action: none; /* Optional: Disable touch actions on specific elements */
     background: none;
     border: none;
     cursor: pointer;
