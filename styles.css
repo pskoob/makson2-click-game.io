@@ -31,7 +31,7 @@ body {
 
 /* Coin Button */
 #coinButton, .card button {
-     touch-action: none; /* Optional: Disable touch actions on specific elements */
+    touch-action: none; /* Optional: Disable touch actions on specific elements */
     background: none;
     border: none;
     cursor: pointer;
@@ -103,4 +103,32 @@ body {
     }
 
     /* ... any other adjustments you need for small screens ... */
+}
+.bottom-button {
+    position: fixed; /* Fix the button to the viewport */
+    bottom: 0;      /* Place it at the bottom */
+    left: 0;       /* Align to the left */
+    width: 30%;     /* Make it full width */
+    text-align: center; /* Center the text */
+    padding: 10px;    /* Add some padding */
+    background-color: #4CAF50; /* Example background color */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.mining-button{
+    position: fixed; /* Fix the button to the viewport */
+    bottom: 0;      /* Place it at the bottom */
+    left: 30;       /* Align to the left */
+    width: 30%;     /* Make it full width */
+    text-align: center; /* Center the text */
+    padding: 10px;    /* Add some padding */
+    background-color: #4CAF50; /* Example background color */
+    color: white;
+    border: none;
+    cursor: pointer;
+
+
+
 }
