@@ -86,7 +86,7 @@ if (userId) {
 async function saveProgress() {
     const progressData = {
       Progress: {
-        tg_id: 628225666,          // Замените на фактический tg_id
+        tg_id: getTelegramUserId(),          // Замените на фактический tg_id
         clickCount: localStorage.getItem('clickCount'),      // Замените на фактическое количество кликов
         upgradeLevel: localStorage.getItem('upgradeLevel'),      // Замените на фактический уровень улучшения
         hasAutoClicker: localStorage.getItem('hasAutoClicker')    // Замените на фактический статус авто-кликера (true/false)
