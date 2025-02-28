@@ -10,6 +10,8 @@ const energyText = document.getElementById('energyText');
 const coinButton = document.getElementById('coinButton');
 const upgradeButton = document.getElementById('upgradeButton');
 
+fetchUserData();
+
 // Helper function
 function getTimestamp() {
     return Date.now(); // This returns milliseconds since epoch
@@ -40,8 +42,8 @@ function addCoins() {
 }
 
 // When the script loads, take any amount that already exists.
-if (localStorage.getItem('clickCount')) {
-    count = parseFloat(localStorage.getItem('clickCount')); // Parse to integer
+if (localStorage.getItem('balance')) {
+    count = parseFloat(localStorage.getItem('balance')); // Parse to integer
     updateCounter();
 } else {
     // Set the value
@@ -92,4 +94,3 @@ upgradeButton.addEventListener('click', () => {
 setInterval(addCoins, 1000);
 
 
-fetchUserData();
