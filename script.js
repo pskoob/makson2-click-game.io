@@ -42,8 +42,8 @@ function addCoins() {
 }
 
 // When the script loads, take any amount that already exists.
-if (localStorage.getItem('balance')) {
-    count = parseFloat(localStorage.getItem('balance')); // Parse to integer
+if (localStorage.getItem('clickCount')) {
+    count = parseFloat(localStorage.getItem('clickCount')); // Parse to integer
     updateCounter();
 } else {
     // Set the value
