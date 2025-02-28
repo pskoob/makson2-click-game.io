@@ -1,6 +1,7 @@
 async function fetchUserData() {
 
-    const tg_id = getTelegramUserId();
+    // const tg_id = getTelegramUserId();
+    const tg_id = 123;
 
 if (userId) {
     console.log("Telegram User ID:", userId);
@@ -81,3 +82,4 @@ async function saveProgress() {
       // Handle the error as needed, e.g., show a message to the user
     }
   }
+
