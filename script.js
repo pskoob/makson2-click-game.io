@@ -93,4 +93,11 @@ upgradeButton.addEventListener('click', () => {
 // Set interval to add coins automatically every second
 setInterval(addCoins, 1000);
 
-
+window.addEventListener("beforeunload", (event) => {
+    // Call the saveProgress function
+    saveProgress();
+  
+    // Optionally, you can show a confirmation dialog
+    event.preventDefault(); // For most browsers
+    event.returnValue = ''; // For Chrome
+  });
