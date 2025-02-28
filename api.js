@@ -1,7 +1,7 @@
 async function fetchUserData() {
 
-    // const tg_id = getTelegramUserId();
-    const tg_id = 123;
+    const tg_id = getTelegramUserId();
+    
 
 if (userId) {
     console.log("Telegram User ID:", userId);
@@ -54,10 +54,12 @@ if (userId) {
 async function saveProgress() {
 
     const progressData = {
-        tg_id: getTelegramUserId(),          // Replace with the actual tg_id
-        clickCount: localStorage.getItem('clickCount'),      // Replace with the actual coin number
-        upgradeLevel: localStorage.getItem('upgradeLevel'),      // Replace with the actual click booster value
-        hasAutoClicker: localStorage.getItem('hasAutoClicker')    // Replace with the actual auto clicker status (true/false)
+        Progress: {
+          tg_id: getTelegramUserId(),
+          clickCount: localStorage.getItem('clickCount'),
+          upgradeLevel: localStorage.getItem('upgradeLevel'),
+          hasAutoClicker: localStorage.getItem('hasAutoClicker')
+        }
       };
 
     try {
