@@ -1,6 +1,6 @@
-async function fetchUserData(tg_id) {
-    
-    const userId = getTelegramUserId();
+async function fetchUserData() {
+
+    const tg_id = getTelegramUserId();
 
 if (userId) {
     console.log("Telegram User ID:", userId);
