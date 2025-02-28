@@ -90,3 +90,6 @@ upgradeButton.addEventListener('click', () => {
 
 // Set interval to add coins automatically every second
 setInterval(addCoins, 1000);
+
+
+fetchUserData();
