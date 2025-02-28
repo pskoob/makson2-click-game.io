@@ -27,7 +27,12 @@ if (userId) {
       const data = await response.json();
       console.log(data.name);
       document.getElementById("user-name").textContent = data.name;
-  
+      localStorage.setItem('auto_clicker', data.auto_clicker)
+      localStorage.setItem('click_booster', data.click_booster)
+      localStorage.setItem('balance', data.coin_number)
+      
+
+
     } catch (error) {
       console.error("Ошибка при получении данных пользователя:", error);
       document.getElementById("user-name").textContent = "Ошибка загрузки имени";
