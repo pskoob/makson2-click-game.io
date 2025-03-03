@@ -124,7 +124,7 @@ addCoins();
 if (localStorage.getItem('hasAutoClicker') === 'true') {
     const autoClickerButton = document.querySelector('button[onclick="purchaseAutoClicker()"]');
     autoClickerButton.disabled = true;
-    // autoClickerButton.innerText = "Purchased"; //отображает после покупки автокликера,что он куплен
+   
 }
 
 
