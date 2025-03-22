@@ -10,8 +10,8 @@ const counterDisplay = document.getElementById('counterDisplay');
 const coinButton = document.getElementById('coinButton');
 const upgradeButton = document.getElementById('upgradeButton');
 
-fetchUserData();
-
+FetchUserData()
+// stopAutoClicker()
 // Helper function
 function getTimestamp() {
     return Date.now(); // This returns milliseconds since epoch
@@ -24,6 +24,39 @@ function updateCounter() {
     }
 }
 
+function useEnergy(amount) {
+    if (energy >= amount) {
+      energy -= amount;
+      energy = Math.max(0, energy); // Ensure energy doesn't go below 0
+      localStorage.setItem('energy', energy.toString());
+  
+      updateEnergyDisplay();
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  document.getElementById('coinButton').addEventListener('click', function() {
+    const energyCost = 1; // Количество энергии, которое тратится при клике
+    const success = useEnergy(energyCost); // Пытаемся потратить энергию
+  
+    if (success) {
+      // Действие выполнено успешно (энергия потрачена)
+      console.log("Клик успешен! Энергия потрачена.");
+      // ... Здесь может быть код для увеличения счетчика кликов, добавления очков и т.д. ...
+    } else {
+      // Недостаточно энергии
+      console.log("Недостаточно энергии!");
+      // ... Здесь может быть код для отображения сообщения об ошибке ...
+    }
+  });
+  
+
+upgradeButton.addEventListener('click', () => {
+    window.location.href = "upgrade.html";
+});
+
 
 // Function to add coins every X milliseconds
 function addCoins() {
@@ -35,7 +68,7 @@ function addCoins() {
         let clickBoosterLevel = parseInt(localStorage.getItem('upgradeLevel')) || 0;
 
         // Auto Clicker gives clicks equal to the Click Booster level
-        currentClickCount += clickBoosterLevel + 1;
+        currentClickCount += clickBoosterLevel + 10000;
 
         localStorage.setItem('clickCount', currentClickCount);
         updateCounter();
@@ -66,30 +99,15 @@ coinButton.addEventListener('click', () => {
 
         updateCounter();
 
-        energy -= 1;
-        energyLevel.style.width = energy + '%';
-        energyText.textContent = energy;
-    } else {
-        alert("Энергия исчерпана!");
+        // energy -= 1;
+        // energyLevel.style.width = energy + '%';
+        // energyText.textContent = energy;
+    // } else {
+    //     alert("Энергия исчерпана!");
     }
 });
 
-// function recoverEnergy() {
-//     if (energy < maxEnergy) {
-//         energy += energyRecoveryRate;
-//         if (energy > maxEnergy) {
-//             energy += energyRecoveryRate;
-//         }
-//         energyLevel.style.width = energy + '%';
-//         energyText.textContent = energy;
-//     }
-// }
 
-// setInterval(recoverEnergy, recoveryInterval);
-
-upgradeButton.addEventListener('click', () => {
-    window.location.href = "upgrade.html";
-});
 
 // Set interval to add coins automatically every second
 setInterval(addCoins, 1000);
