@@ -12,13 +12,13 @@ body {
     justify-content: flex-start; /* Align items to the top */
     min-height: 100vh; /* Ensure full viewport height */
     /* background-color: #f0f0f0; */
-    background-image: url("background1.jpg");    /*NEW*/
+    background-image: url("back.jpg");    
     background-repeat: no-repeat;               /*NEW*/
     background-position: center;                /*NEW*/
     background-size: cover;
     font-family: Arial, sans-serif;
-    padding: 20px; /* Add some padding around the content */
-    box-sizing: border-box; /* Include padding in the element's total width and height */
+    padding: 20px; 
+    box-sizing: border-box;
 
     /* ADDED to prevent zooming */
     touch-action: manipulation; /* Prevents all zooming and panning */
@@ -34,19 +34,22 @@ body {
 }
 
 /* Coin Button */
-#coinButton, .card button {
-    touch-action: none; /* Optional: Disable touch actions on specific elements */
+#coinButton {
+    touch-action: none;
     background: none;
     border: none;
     cursor: pointer;
+    margin-left: 30%;
+    margin-top: 100%; /* Уменьшаем отступ сверху */
     padding: 0;
 }
 
 #coinImage {
-    width: 20vw; /* Use viewport width for coin image size */
-    max-width: 150px; /* Limit the maximum size */
+    width: 50%; /* Картинка занимает 50% ширины контейнера */
+    max-width: 300px; /* Ограничиваем максимальную ширину */
     height: auto;
-    animation: jiggle 1s infinite; /* Apply the jiggle animation */
+    /* background-size: fill;  Удаляем этот стиль */
+    animation: jiggle 1s infinite;
 }
 
 /* @keyframes jiggle {
@@ -54,6 +57,17 @@ body {
     50% { transform: rotate(5deg); }
     100% { transform: rotate(-5deg); }
 } */
+
+
+.card button {
+    touch-action: none; /* Optional: Disable touch actions on specific elements */
+    background: none;
+    border: none;
+    cursor: pointer;
+ 
+    padding: 0;
+}
+
 
 /* Container */
 .container {
@@ -109,12 +123,12 @@ body {
     /* ... any other adjustments you need for small screens ... */
 }
 .bottom-button {
-    position: fixed; /* Fix the button to the viewport */
-    bottom: 0;      /* Place it at the bottom */
-    left: 1;       /* Align to the left */
-    width: 20%;     /* Make it full width */
-    margin-left: -101px;
-    padding: 30px;    /* Add some padding */
+    position: fixed; 
+    bottom: 0;      
+    left: 1;       
+    width: 20%;     
+    margin-left: -46%;
+    padding: 30px;    
     
     background-image: url("cardupgrade2.jpg");
     background-repeat: no-repeat;
