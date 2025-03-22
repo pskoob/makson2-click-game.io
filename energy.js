@@ -1,58 +1,65 @@
 // energy.js
 
-// Global variables (accessible from other scripts)
+// Global variables
 var energy = 100;
-const maxEnergy = 100;
+var maxEnergy = 100; // Добавляем переменную для максимальной энергии
+const baseMaxEnergy = 100; // Базовое значение maxEnergy
 const energyRecoveryRate = 1;
-const recoveryInterval = 2000;
-var energyLevel = document.getElementById('energyLevel'); // Removed const
-var energyText = document.getElementById('energyText');   // Removed const
+const recoveryInterval = 1000;
 
+var energyLevel = document.getElementById('energyLevel');
+var energyText = document.getElementById('energyText');
+var maxEnergyValue = document.getElementById('maxEnergyValue'); // Добавляем элемент для отображения maxEnergy
+
+const upgradeMaxEnergyCost = 100;
 
 function updateEnergyDisplay() {
-    if (energyLevel && energyText) {  // Check if the elements exist
-        energyLevel.style.width = energy + '%';
-        energyText.textContent = Math.floor(energy);
-    }
+  if (energyLevel && energyText) {
+    energyLevel.style.width = (energy / maxEnergy) * 100 + '%'; // Correct the calculation
+    energyText.textContent = Math.floor(energy);
+  }
 }
 
+function updateMaxEnergyDisplay() {
+  if (maxEnergyValue) {
+    maxEnergyValue.textContent = maxEnergy;
+  }
+}
 
 function recoverEnergy() {
-    if (energy < maxEnergy) {
-        energy += energyRecoveryRate;
-        energy = Math.min(energy, maxEnergy); // Cap it at maxEnergy
+  if (energy < maxEnergy) {
+    energy += energyRecoveryRate;
+    energy = Math.min(energy, maxEnergy);
 
-        localStorage.setItem('energy', energy.toString());
-        updateEnergyDisplay();
-    }
+    localStorage.setItem('energy', energy.toString());
+    updateEnergyDisplay();
+  }
 }
 
-function useEnergy(amount) {
-    if (energy >= amount) {
-        energy -= amount;
-        localStorage.setItem('energy', energy.toString());
 
-        updateEnergyDisplay();
-        return true; // Indicate success
-    } else {
-        return false; // Indicate failure
-    }
-}
 
 function getEnergy() {
-    return energy;
+  return energy;
 }
 
-// Load the value from localStorage if available
-var storedEnergy = localStorage.getItem('energy');
 
+
+// Load values from localStorage
+var storedEnergy = localStorage.getItem('energy');
 if (storedEnergy) {
-    energy = parseFloat(storedEnergy);
+  energy = parseFloat(storedEnergy);
+}
+
+var storedMaxEnergy = localStorage.getItem('maxEnergy'); // Загружаем maxEnergy
+if (storedMaxEnergy) {
+  maxEnergy = parseFloat(storedMaxEnergy);
 }
 
 // Initialize on load
 updateEnergyDisplay();
-
+updateMaxEnergyDisplay(); // Инициализируем отображение maxEnergy
 
 // Start recovery interval
 setInterval(recoverEnergy, recoveryInterval);
+
+// Add event listener to the button
