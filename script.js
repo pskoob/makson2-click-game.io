@@ -68,7 +68,7 @@ function addCoins() {
         let clickBoosterLevel = parseInt(localStorage.getItem('upgradeLevel')) || 0;
 
         // Auto Clicker gives clicks equal to the Click Booster level
-        currentClickCount += clickBoosterLevel + 10000;
+        currentClickCount += clickBoosterLevel + 1;
 
         localStorage.setItem('clickCount', currentClickCount);
         updateCounter();
