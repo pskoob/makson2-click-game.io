@@ -40,7 +40,7 @@ function useEnergy(amount) {
   document.getElementById('coinButton').addEventListener('click', function() {
     const energyPerClick = 1; // Количество энергии, которое тратится при клике
     const success = useEnergy(energyPerClick); // Пытаемся потратить энергию
-  
+    
     if (success) {
       // Действие выполнено успешно (энергия потрачена)
       console.log("Клик успешен! Энергия потрачена.");
