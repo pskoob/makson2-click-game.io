@@ -1,7 +1,7 @@
 /* Общие стили (остаются без изменений) */
 body {
     font-family: Arial, sans-serif;
-    background-image: url("testback.jpg");  
+    background-image: url("imgUpgrade/backForUpgrade.jpg");  
     /* background-color: #959684; */
     background-repeat: no-repeat; 
     background-position: center;   
@@ -42,7 +42,7 @@ body {
 
 /* Стили для фона карточек (остаются без изменений) */
 #card1 {
-    background-image: url("cactus2.jpg");
+    background-image: url("imgUpgrade/cactus2.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -52,7 +52,7 @@ body {
 }
 
 #card2 {
-    background-image: url("skar2.jpg");
+    background-image: url("imgUpgrade/skar2.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -61,7 +61,7 @@ body {
 }
 
 #card3 {
-    background-image: url("svitok234.jpg");
+    background-image: url("imgUpgrade/water.jpg");
     background-size:100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -191,7 +191,7 @@ body {
     border: none;
     cursor: pointer;
 
-    background-image: url("mining2.jpg");
+    background-image: url("miningAqua.png");
     background-repeat: no-repeat;
     background-position: center;
 
