@@ -62,6 +62,8 @@ body {
     max-width: 300px;   /* Максимальная ширина кнопки */
     max-height: 300px;  /* Максимальная высота кнопки */
     margin-top: 5vw;   /* Отступ сверху */
+    outline: none;
+    box-shadow: none;
 }
 
 @media (max-width: 528px) {
